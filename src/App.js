@@ -47,18 +47,18 @@ function App() {
   return (
     <div className='app' >
       <div>
-        <input ref={inp} type="text" required />
-        <button onKeyDown={(e) => {
+        <input ref={inp}  onKeyDown={(e) => {
+          console.log(e.code)
           if (
-            e.code === "enter"
-
+            e.code === "Enter"
           ) {
             setPage(1)
             setQ(inp.current.value)
             search(inp.current.value)
           }
 
-        }} onClick={() => {
+        }} type="text" required />
+        <button onClick={() => {
           setPage(1)
           setQ(inp.current.value)
           search(inp.current.value)
